@@ -1,0 +1,31 @@
+<?php
+
+namespace  App\Services;
+
+use App\Repositories\Contracts\TableRepositoryInterface;
+use App\Repositories\Contracts\TenantRepositoryInterface;
+
+class TableService
+{
+    protected $tenantRepository, $tableRepository;
+
+
+    public function __construct(
+        TenantRepositoryInterface $tenantRepository,
+        TableRepositoryInterface $tableRepository
+    ) {
+        $this->tenantRepository   = $tenantRepository;
+        $this->tableRepository = $tableRepository;
+    }
+
+    public function getTableByTenantUuid(string $uuid)
+    {
+        $tenant = $this->tenantRepository->getTenantByUuid($uuid);
+        return $this->tableRepository->getTableByTenantId($tenant->id);
+    }
+
+    public function getTableByIdentify(int $id)
+    {
+        return $this->tableRepository->getTableByIdentify($id);
+    }
+}
