@@ -28,11 +28,10 @@ class ProductRepository implements ProductRepositoryInterface
             })->get();
     }
 
-    public function getProductByFlag(string $flag)
+    public function getProductByUuid(string $uuid)
     {
-
         return DB::table($this->table)
-            ->where('flag', $flag)
+            ->where('uuid', $uuid)
             ->first();
     }
 }

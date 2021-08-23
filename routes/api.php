@@ -36,7 +36,7 @@ Route::prefix('v1')->namespace('Api')->group(function () {
     Route::get('/tables/{identify}', [App\Http\Controllers\Api\TableApiController::class, 'show']);
     Route::get('/tables', [App\Http\Controllers\Api\TableApiController::class, 'tablesByTenant']);
 
-    Route::get('/products/{flag}', [App\Http\Controllers\Api\ProductApiController::class, 'show']);
+    Route::get('/products/{identify}', [App\Http\Controllers\Api\ProductApiController::class, 'show']);
     Route::get('/products', [App\Http\Controllers\Api\ProductApiController::class, 'productsByTenant']);
 
     Route::post('/client', [App\Http\Controllers\Api\Auth\RegisterController::class, 'store']);
