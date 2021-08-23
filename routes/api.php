@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/sanctum/token', [App\Http\Controllers\Api\Auth\AuthClientController::class, 'auth']);
+
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('/auth/me', [App\Http\Controllers\Api\Auth\AuthClientController::class, 'me']);
+    Route::post('/auth/logout', [App\Http\Controllers\Api\Auth\AuthClientController::class, 'logout']);
+});
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -30,4 +38,6 @@ Route::prefix('v1')->namespace('Api')->group(function () {
 
     Route::get('/products/{flag}', [App\Http\Controllers\Api\ProductApiController::class, 'show']);
     Route::get('/products', [App\Http\Controllers\Api\ProductApiController::class, 'productsByTenant']);
+
+    Route::post('/client', [App\Http\Controllers\Api\Auth\RegisterController::class, 'store']);
 });

@@ -9,14 +9,28 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\TenantController;
+use App\Models\Client;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-//Auth::routes();
+Route::get('teste', function () {
+    $client = Client::first();
 
+    $token = $client->createToken('token-teste');
+
+    dd($token->plainTextToken);
+});
+
+//Auth::routes();
+Route::get('teste', function () {
+    $client = Client::first();
+
+    $token = $client->createToken('token_teste');
+    dd($token->plainTextToken);
+});
 Route::get('/login', [App\Http\Controllers\HomeController::class, 'index'])->name('login');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

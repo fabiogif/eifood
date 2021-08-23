@@ -51,7 +51,7 @@ class ProductController extends Controller
         $tenant = auth()->user()->tenant;
 
         if ($request->hasFile('image') && $request->image->isValid()) {
-            $data['image'] = $request->image->store("tenants/{$tenant->uuid}/products");
+            $data['image'] = $request->image->store("tenants/{$tenant->uuid} /products");
         }
 
         $this->repository->create($data);
@@ -115,7 +115,7 @@ class ProductController extends Controller
             if (Storage::exists($product->image)) {
                 Storage::delete($product->image);
             }
-            $data['image'] = $request->image->store("tenant/{$tenant->uuid}products");
+            $data['image'] = $request->image->store("tenant/{$tenant->uuid}/products");
         }
 
         $product->update($data);
