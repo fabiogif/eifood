@@ -27,11 +27,9 @@ class TableApiController extends Controller
         return $tables;
     }
 
-    public function show($id)
+    public function show($uuid)
     {
-
-        $table = $this->tableService->getTableByIdentify($id);
-
+        $table = $this->tableService->getTableByUuid($uuid);
         if (!$table) {
             return response()->json(['message', 'Table not found'], 404);
         }

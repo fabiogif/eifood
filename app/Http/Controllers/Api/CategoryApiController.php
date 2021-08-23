@@ -27,15 +27,13 @@ class CategoryApiController extends Controller
         return $categories;
     }
 
-    public function show($id)
+    public function show($uuid)
     {
-
-        $category = $this->categoryService->getCategoryById($id);
+        $category = $this->categoryService->getCategoryByUuid($uuid);
 
         if (!$category) {
             return response()->json(['message', 'Category not found'], 404);
         }
-
         return  new CategoryResource($category);
     }
 }

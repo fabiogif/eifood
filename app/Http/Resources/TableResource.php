@@ -16,7 +16,8 @@ class TableResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'identify' => $this->identify,
+            'identify' => $this->uuid,
+            'nameIdentify' => $this->identify,
             'description' => $this->description,
             'data_created' => Carbon::parse($this->created_at)->format('d/m/Y')
         ];

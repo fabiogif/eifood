@@ -30,7 +30,7 @@ Route::prefix('v1')->namespace('Api')->group(function () {
     Route::get('/tenants/{uuid}', [App\Http\Controllers\Api\TenantApiController::class, 'show']);
     Route::get('/tenants', [App\Http\Controllers\Api\TenantApiController::class, 'index']);
 
-    Route::get('/categories/{id}', [App\Http\Controllers\Api\CategoryApiController::class, 'show']);
+    Route::get('/categories/{identify}', [App\Http\Controllers\Api\CategoryApiController::class, 'show']);
     Route::get('/categories', [App\Http\Controllers\Api\CategoryApiController::class, 'categoriesByTentant']);
 
     Route::get('/tables/{identify}', [App\Http\Controllers\Api\TableApiController::class, 'show']);
