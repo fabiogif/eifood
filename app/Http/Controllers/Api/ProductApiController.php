@@ -22,7 +22,6 @@ class ProductApiController extends Controller
 
     public function productsByTenant(TenantFormRequest $request)
     {
-
         if (!$request->token_company) {
             return response()->json(['message', 'Token not found'], 404);
         }
