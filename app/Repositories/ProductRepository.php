@@ -25,7 +25,19 @@ class ProductRepository implements ProductRepositoryInterface
                 if ($categories != []) {
                     $query->whereIn('categories.uuid', $categories);
                 }
-            })->get();
+            })
+            ->select(
+                'products.id',
+                'products.uuid',
+                'products.title',
+                'products.flag',
+                'products.price',
+                'products.image',
+                'products.tenant_id',
+                'products.description',
+                'products.created_at'
+            )
+            ->get();
     }
 
     public function getProductByUuid(string $uuid)
