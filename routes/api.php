@@ -40,4 +40,7 @@ Route::prefix('v1')->namespace('Api')->group(function () {
     Route::get('/products', [App\Http\Controllers\Api\ProductApiController::class, 'productsByTenant']);
 
     Route::post('/client', [App\Http\Controllers\Api\Auth\RegisterController::class, 'store']);
+
+    Route::post('/orders', [App\Http\Controllers\Api\OrderApiController::class, 'store']);
+    Route::get('/orders/{identify}', [App\Http\Controllers\Api\OrderApiController::class, 'show']);
 });
