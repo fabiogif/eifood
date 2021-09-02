@@ -1,6 +1,6 @@
 <p align="center">Ey Food</p>
 
-Sistema de gerenciamento de Restaurantes  
+Sistema de gerenciamento para Restaurantes  
 Restaurant Management System
 
 
