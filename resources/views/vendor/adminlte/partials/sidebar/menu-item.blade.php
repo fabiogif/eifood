@@ -5,9 +5,7 @@
     {{-- Header --}}
     @include('adminlte::partials.sidebar.menu-item-header')
 
-@elseif ($menuItemHelper->isSearchBar($item))
-
-    {{-- Search form --}}
+    {{-- Search form --}} isSearchBar
     @include('adminlte::partials.sidebar.menu-item-search-form')
 
 @elseif ($menuItemHelper->isSubmenu($item))
