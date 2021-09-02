@@ -27,7 +27,7 @@ class StoreUpdateCategory extends FormRequest
 
         return [
             'name' => ['required', 'min:3', 'max:255', "unique:categories,name,{$id},id"],
-            'description' => ['nullable', 'min:3', 'max:1000']
+            'description' => ['required', 'min:3', 'max:1000']
         ];
     }
 }

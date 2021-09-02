@@ -4,7 +4,6 @@ namespace  App\Services;
 
 use App\Repositories\Contracts\ProductRepositoryInterface;
 use App\Repositories\Contracts\TenantRepositoryInterface;
-use Illuminate\Support\Arr;
 
 class ProductService
 {
@@ -26,8 +25,8 @@ class ProductService
         return $this->productRepository->getProductByTenantId($tenant->id, $categories);
     }
 
-    public function getProductByFlag(string $flag)
+    public function getProductByUuid(string $uuid)
     {
-        return $this->productRepository->getProductByFlag($flag);
+        return $this->productRepository->getProductByUuid($uuid);
     }
 }

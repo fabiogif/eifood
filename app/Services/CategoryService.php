@@ -24,10 +24,8 @@ class CategoryService
         return $this->categoryRepository->getCategoryByTenantId($tenant->id);
     }
 
-    public function getCategoryById(int $id)
+    public function getCategoryByUuid(string $uuid)
     {
-        return $this->categoryRepository->getCategoryById($id);
+        return $this->categoryRepository->getCategoryByUuid($uuid);
     }
-
-    
 }

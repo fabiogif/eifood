@@ -22,7 +22,6 @@ class ProductApiController extends Controller
 
     public function productsByTenant(TenantFormRequest $request)
     {
-
         if (!$request->token_company) {
             return response()->json(['message', 'Token not found'], 404);
         }
@@ -33,9 +32,9 @@ class ProductApiController extends Controller
         return ProductResource::collection($products);
     }
 
-    public function show(TenantFormRequest $request, $flag)
+    public function show(TenantFormRequest $request, $uuid)
     {
-        $products = $this->productService->getProductByFlag($flag);
+        $products = $this->productService->getProductByUuid($uuid);
 
         if (!$products) {
             return response()->json(['message', 'Product not found'], 404);

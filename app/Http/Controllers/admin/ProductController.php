@@ -115,7 +115,7 @@ class ProductController extends Controller
             if (Storage::exists($product->image)) {
                 Storage::delete($product->image);
             }
-            $data['image'] = $request->image->store("tenant/{$tenant->uuid}products");
+            $data['image'] = $request->image->store("tenant/{$tenant->uuid}/products");
         }
 
         $product->update($data);
