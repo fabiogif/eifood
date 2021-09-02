@@ -14,8 +14,8 @@ return [
     |
     */
 
-    'title' => 'Sistema de ocorrências',
-    'title_prefix' => '',
+    'title' => 'Sistema para restaurante',
+    'title_prefix' => 'Ey food -',
     'title_postfix' => '',
 
     /*
