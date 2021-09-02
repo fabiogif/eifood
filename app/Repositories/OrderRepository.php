@@ -62,4 +62,8 @@ class OrderRepository implements OrderRepositoryInterface
         }
         $order->products()->attach($orderProduct);
     }
+    public function getOrderByIdentify(string $identify)
+    {
+        return $this->entify->where('identify', $identify)->first();
+    }
 }

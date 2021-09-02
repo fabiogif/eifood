@@ -17,6 +17,10 @@ class OrderResource extends JsonResource
         return [
             'identify' => $this->identify,
             'total' => $this->total,
+            'client' => $this->client_id ? new ClientResource($this->client) : '',
+            'table' => $this->table_id ? new TableResource($this->table) : '',
+            'products' => ProductResource::collection($this->products),
+
         ];
     }
 }
