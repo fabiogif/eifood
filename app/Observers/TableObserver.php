@@ -11,9 +11,10 @@ class TableObserver
     /**
      * Handle the Table "creating" event.
      *
-     * @param  \App\Models\Models\Table  $table
+     * @param  \App\Models\Table  $table
      * @return void
      */
+
     public function creating(Table $table)
     {
         $table->uuid = Str::uuid();

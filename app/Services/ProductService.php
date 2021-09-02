@@ -4,7 +4,6 @@ namespace  App\Services;
 
 use App\Repositories\Contracts\ProductRepositoryInterface;
 use App\Repositories\Contracts\TenantRepositoryInterface;
-use Illuminate\Support\Arr;
 
 class ProductService
 {

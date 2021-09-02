@@ -12,6 +12,7 @@ class ClientService
 
     public function __construct(ClientRepositoryInterface $clientRepository)
     {
+
         $this->clientRepository = $clientRepository;
     }
 

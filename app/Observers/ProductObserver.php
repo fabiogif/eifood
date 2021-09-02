@@ -65,7 +65,7 @@ class ProductObserver
     /**
      * Handle the Product "creating" event.
      *
-     * @param  \App\Models\Models\Product  $product
+     * @param  \App\Models\Product  $product
      * @return void
      */
     public function creating(Product $product)
@@ -78,7 +78,7 @@ class ProductObserver
     /**
      * Handle the Plan "updating" event.
      *
-     * @param  \App\Models\Models\Product  $product
+     * @param  \App\Models\Product  $product
      * @return void
      */
     public function updating(Product $product)

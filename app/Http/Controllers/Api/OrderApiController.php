@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\StoreUpdateOrder;
+use App\Http\Requests\Api\TenantFormRequest;
 use App\Http\Resources\OrderResource;
 use App\Services\OrderService;
 use Illuminate\Http\Request;
@@ -24,7 +25,13 @@ class OrderApiController extends Controller
         return new OrderResource($order);
     }
 
-    public function show()
+    public function show(TenantFormRequest $request, $identify)
     {
+        $order = $this->orderService->getOrderByIdentify($identify);
+
+        if (!$order) {
+            return response()->json(['message' => 'Not found'], 404);
+        }
+        return new OrderResource($order);
     }
 }
