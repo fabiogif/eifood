@@ -119,4 +119,11 @@ class OrderService
     {
         return $this->orderRepository->getOrderByIdentify($identify);
     }
+
+    public function getOrderByClient()
+    {
+        $clientId = $this->getClientIdByOrder();
+
+        return $this->orderRepository->getOrderByClientId($clientId);
+    }
 }

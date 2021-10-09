@@ -66,4 +66,11 @@ class OrderRepository implements OrderRepositoryInterface
     {
         return $this->entify->where('identify', $identify)->first();
     }
+
+    public function getOrderByClientId(int $clientId)
+    {
+        $orders = $this->entify->where('client_id', $clientId)->paginate(5);
+
+        return $orders;
+    }
 }

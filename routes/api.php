@@ -20,6 +20,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/auth/me', [App\Http\Controllers\Api\Auth\AuthClientController::class, 'me']);
     Route::post('/auth/logout', [App\Http\Controllers\Api\Auth\AuthClientController::class, 'logout']);
     Route::post('/auth/v1/orders',  [App\Http\Controllers\Api\OrderApiController::class, 'store']);
+    Route::get('auth/v1/myOrders', [App\Http\Controllers\Api\OrderApiController::class, 'myOrders']);
 });
 
 
