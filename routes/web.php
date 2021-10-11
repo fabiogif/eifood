@@ -54,6 +54,7 @@ Route::prefix('admin')
         //Table - Mesas
         Route::any('tables/search', [App\Http\Controllers\Admin\TableController::class, 'search'])->name('tables.search');
         Route::resource('tables', TableController::class);
+        Route::get('tables/qrcode/{identify}', [App\Http\Controllers\Admin\TableController::class, 'qrcode'])->name('tables.qrcode');
 
 
         //Categorias
