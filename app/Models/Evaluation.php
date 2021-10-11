@@ -9,7 +9,9 @@ class Evaluation extends Model
 {
     use HasFactory;
 
-    protected $table = 'orderEvaluations';
+    protected $fillable = ['order_id', 'client_id', 'stars', 'comment'];
+
+    protected $table = 'order_evaluations';
 
     public function order()
     {

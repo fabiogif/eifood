@@ -13,7 +13,7 @@ class CreateEvaluationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('orderEvaluations', function (Blueprint $table) {
+        Schema::create('order_evaluations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('client_id');
