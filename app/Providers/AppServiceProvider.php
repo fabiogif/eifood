@@ -6,6 +6,7 @@ use App\Models\{Category, Client, Plan, Product, Table, Tenant};
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use App\Observers\{PlanObserver, ProductObserver, TableObserver, TenantObserver, CategoryObserver, ClientObserver};
+use Illuminate\Support\Facades\Blade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,5 +33,12 @@ class AppServiceProvider extends ServiceProvider
         Product::observe(ProductObserver::class);
         Client::observe(ClientObserver::class);
         Table::observe(TableObserver::class);
+
+        Blade::if('admin', function () {
+            $user = auth()->user();
+
+
+            return $user->isAdmin();
+        });
     }
 }

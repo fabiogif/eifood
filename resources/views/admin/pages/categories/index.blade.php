@@ -49,10 +49,10 @@
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->url }}</td>
                             <td style="width: 10px">
-                                <a href="{{ route('categories.edit', $category->id) }}"
-                                    class="btn btn-warning">Alterar</a>
-                                <a href="{{ route('categories.show', $category->id) }}"
-                                    class="btn btn-info">Visualizar</a>
+                                <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-warning"><i
+                                        class="fas fa-edit"></i></a>
+                                <a href="{{ route('categories.show', $category->id) }}" class="btn btn-info"><i
+                                        class="fas fa-search"></i></a>
                                 </a>
 
                             </td>

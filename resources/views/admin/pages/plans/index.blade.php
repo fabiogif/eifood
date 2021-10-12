@@ -39,7 +39,7 @@
                     <tr>
                         <th>Nome</th>
                         <th>Preço</th>
-                        <th width="200px">Ações</th>
+                        <th width="250px">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,11 +48,14 @@
                             <td>{{ $plan->name }}</td>
                             <td>R$ {{ number_format($plan->price, 2, ',', '.') }}</td>
                             <td style="width: 10px">
-                                <a href="{{ route('details.plans.index', $plan->id) }}"
-                                    class="btn btn-primary">Detalhes</a>
-                                <a href="{{ route('plans.edit', $plan->id) }}" class="btn btn-warning">Alterar</a>
-                                <a href="{{ route('plans.show', $plan->id) }}" class="btn btn-info">Visualizar</a>
-                                <a href="{{ route('plans.profiles', $plan->id) }}" class="btn btn-warning">Vincular</a>
+                                <a href="{{ route('details.plans.index', $plan->id) }}" class="btn btn-primary"><i
+                                        class="fa-solid fas fa-bars"></i></a>
+                                <a href="{{ route('plans.edit', $plan->id) }}" class="btn btn-warning"><i
+                                        class="fas fa-edit"></i></a>
+                                <a href="{{ route('plans.show', $plan->id) }}" class="btn btn-info"><i
+                                        class="fas fa-search"></i></a>
+                                <a href="{{ route('plans.profiles', $plan->id) }}" class="btn btn-warning"><i
+                                        class="fas fa-users-cog"></i></a>
                             </td>
                         </tr>
                     @endforeach

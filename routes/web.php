@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\TenantController;
+use Laravel\Telescope\Http\Controllers\HomeController;
 use App\Models\Client;
 use Illuminate\Support\Facades\Auth;
 
@@ -138,7 +139,7 @@ Route::prefix('admin')
         Route::any('/permission/search', [App\Http\Controllers\Admin\ACL\PermissionController::class, 'search'])->name('permission.search');
         Route::resource('permission', PermissionController::class);
         //Home
-        Route::get('/', [App\Http\Controllers\Admin\PlanController::class, 'index'])->name('admin.index');
+        Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'home'])->name('admin.index');
     });
 
 

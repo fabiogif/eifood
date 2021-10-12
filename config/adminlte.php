@@ -225,6 +225,11 @@ return [
 
     'menu' => [
         [
+            'text' => 'Painel de Controle',
+            'url'  => 'admin/',
+            'icon' => 'fas fa-tachometer-alt',
+        ],
+        [
             'text' => 'Empresas',
             'url'  => 'admin/tenants',
             'icon' => 'fas fa-building',
@@ -269,7 +274,7 @@ return [
         [
             'text' => 'Produtos',
             'url'  => 'admin/products',
-            'icon' => 'fas fa-layer-group',
+            'icon' => 'fas fa-utensils',
             'can'  => 'products'
         ],
         [
