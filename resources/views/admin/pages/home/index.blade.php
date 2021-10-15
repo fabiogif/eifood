@@ -2,9 +2,7 @@
 @section('title', 'Painel de Controle')
 
 @section('content_header')
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Painel de Controle</a> </li>
-    </ol>
+
 
     <h1 class="m-0 text-dark">Painel de Controle</h1>
     <div class="row">
@@ -19,7 +17,7 @@
                 <div class="icon">
                     <i class="fas fa-users"></i>
                 </div>
-                <a href="#" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/admin/users" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         @endadmin()
@@ -35,7 +33,8 @@
                 <div class="icon">
                     <i class="fas fa-tablet"></i>
                 </div>
-                <a href="#" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/admin/tables" class="small-box-footer">Mais informações <i
+                        class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         @endadmin()
@@ -51,7 +50,8 @@
                 <div class="icon">
                     <i class="fas fa-layer-group"></i>
                 </div>
-                <a href="#" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/admin/categories" class="small-box-footer">Mais informações <i
+                        class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         @endadmin()
@@ -67,7 +67,8 @@
                 <div class="icon">
                     <i class="fas fa-utensils"></i>
                 </div>
-                <a href="#" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/admin/products" class="small-box-footer">Mais informações <i
+                        class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
     </div>
